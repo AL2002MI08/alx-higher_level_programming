@@ -3,9 +3,9 @@
 def safe_print_division(a, b):
     """Divides element by element 2 lists."""
     try:
-        res = a / b
+        result = a / b
     except ZeroDivisionError:
-        res = None
+        result = None
     finally:
         print("Inside result: {}".format(result))
-        return res
+        return result
