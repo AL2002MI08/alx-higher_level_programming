@@ -65,7 +65,7 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        """Calculates area of a rectangle.
+        """Calculates the area of a rectangle.
         Returns:
             int: area of the rectangle
         """
@@ -80,3 +80,28 @@ class Rectangle:
             return 0
         else:
             return (2 * (self.__width + self.__height))
+
+    def __str__(self):
+        """printable representation of the rectangle class.
+        Returns:
+            str: print the rectangle with the character #
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rect = []
+        for x in range(self.__height):
+            for y in range(self.__width):
+                rect.append("#")
+            # append new line until the last value of height
+            if x != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
+
+        # Another way
+        # for x in range(self.__height):
+        #     if x != self.__height and x != 0:
+        #         print("")
+        #     print("#" * self.width, end="")
+
+        # return ""
