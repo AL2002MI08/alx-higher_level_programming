@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-"""
+
+"""Writes a string to a text file"""
 
 
-def number_of_lines(filename=""):
+def write_file(filename="", text=""):
+    """Writes a string to a text file (UTF8)
+    Args:
+        filename (str): name of the file to write
+        text (str): text to write to the file
+    Returns:
+        number of characters written
     """
-    Counts the number of lines from the filename
-    Arguments:
-        filename (str): The name of the file to count in
-    """
-    with open(filename, encoding='utf-8') as file:
-        lines = file.readlines()
-    return len(lines)
+    with open(filename, "w", encoding="utf-8") as file:
+        characterWritten = file.write(text)
+        return characterWritten
